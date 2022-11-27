@@ -39,6 +39,33 @@ class Utils:
 		return arr
 
 
+	def present_in_array(self, arr, target):
+
+		found = False
+
+		for values in target:
+			if ord(values) in arr:
+				found = True
+
+		return found
+
+
+	def modify_expressions(self, exp):
+
+		digitArray = self.create_digits_array()
+
+		if '^' not in exp:
+
+			exp = exp + '^' + '1'
+
+		if exp[0] not in digitArray:
+
+			exp = '1' + exp
+
+		return exp
+
+
+
 # utils = Utils()
 # print(utils.create_digits_array())
 
